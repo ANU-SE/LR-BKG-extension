@@ -139,30 +139,32 @@ class NLPUtil:
         :param paragraph:
         :return:
         """
-        # 去掉回车，换成空格
-        paragraph = paragraph.replace('\n', ' ')
-
-        # 驼峰
-        paragraph = NLPUtil.camel_case_split(paragraph)
-
-        # 变成小写表示
-        paragraph = paragraph.lower()
-        # 分句
-        sentences = NLPUtil.sentence_tokenize(paragraph)
         filtered_words_list = []
-        for sentence in sentences:
-            # print(sentence)
-            # 去标点符号
-            sentence_p = NLPUtil.remove_punctuation(sentence)
-            # print(sentence_p)
-            # 分词 词性标注 词形还原
-            words = NLPUtil.lemmatize(sentence_p)
-            # 去除停词
-            filtered_words = NLPUtil.remove_stopwords(words)
-            filtered_words = NLPUtil.remove_number(filtered_words)
-            for fword in filtered_words:
-                # print(fword)
-                filtered_words_list.append(fword)
+        if paragraph:
+            # 去掉回车，换成空格
+            paragraph = paragraph.replace('\n', ' ')
+
+            # 驼峰
+            paragraph = NLPUtil.camel_case_split(paragraph)
+
+            # 变成小写表示
+            paragraph = paragraph.lower()
+            # 分句
+            sentences = NLPUtil.sentence_tokenize(paragraph)
+
+            for sentence in sentences:
+                # print(sentence)
+                # 去标点符号
+                sentence_p = NLPUtil.remove_punctuation(sentence)
+                # print(sentence_p)
+                # 分词 词性标注 词形还原
+                words = NLPUtil.lemmatize(sentence_p)
+                # 去除停词
+                filtered_words = NLPUtil.remove_stopwords(words)
+                filtered_words = NLPUtil.remove_number(filtered_words)
+                for fword in filtered_words:
+                    # print(fword)
+                    filtered_words_list.append(fword)
         return filtered_words_list
 
     @staticmethod
