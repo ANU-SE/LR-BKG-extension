@@ -162,7 +162,8 @@ class Bug:
         bug = Bug()
         bug.id = bug_dict['id']
         bug.summary = bug_dict['summary']
-        bug.description = bug_dict['comments'][0]['text']
+        if len(bug_dict['comments']) > 0:
+            bug.description = bug_dict['comments'][0]['text']
         bug.product_component_pair = ProductComponentPair(bug_dict['product'], bug_dict['component'])
         bug.tossing_path = TossingPath(Bug.get_tossing_path(bug_dict['history'], bug.product_component_pair))
         bug.creation_time = datetime.strptime(bug_dict['creation_time'], "%Y-%m-%d %H:%M:%S")
