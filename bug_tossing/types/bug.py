@@ -165,10 +165,10 @@ class Bug:
         bug.description = bug_dict['comments'][0]['text']
         bug.product_component_pair = ProductComponentPair(bug_dict['product'], bug_dict['component'])
         bug.tossing_path = TossingPath(Bug.get_tossing_path(bug_dict['history'], bug.product_component_pair))
-        bug.creation_time = datetime.strptime(bug_dict['creation_time'], "%Y-%m-%dT%H:%M:%SZ")
-        if bug_dict['cf_last_resolved'] is not None:
-            bug.closed_time = datetime.strptime(bug_dict['cf_last_resolved'], "%Y-%m-%dT%H:%M:%SZ")
-        bug.last_change_time = datetime.strptime(bug_dict['last_change_time'], "%Y-%m-%dT%H:%M:%SZ")
+        bug.creation_time = datetime.strptime(bug_dict['creation_time'], "%Y-%m-%d %H:%M:%S")
+        # if bug_dict['cf_last_resolved'] is not None:
+        #     bug.closed_time = datetime.strptime(bug_dict['cf_last_resolved'], "%Y-%m-%d %H:%M:%S")
+        bug.last_change_time = datetime.strptime(bug_dict['last_change_time'], "%Y-%m-%d %H:%M:%S")
         bug.status = bug_dict['status']
 
         bug.summary_token = NLPUtil.preprocess(bug.summary)
