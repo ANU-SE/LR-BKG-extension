@@ -15,6 +15,10 @@ class PathUtil:
         return DATA_DIR / Path("bugs.json")
 
     @staticmethod
+    def get_eclipse_bugs_filepath():
+        return DATA_DIR / Path("eclipse_bugs.json")
+
+    @staticmethod
     def get_bugs_object_filepath():
         return DATA_DIR / Path("bugs_object.json")
 
@@ -37,6 +41,10 @@ class PathUtil:
     @staticmethod
     def get_filtered_bugs_filepath():
         return DATA_DIR / Path("filtered_bugs.json")
+
+    @staticmethod
+    def get_filtered_eclipse_bugs_filepath():
+        return DATA_DIR / Path("filtered_eclipse_bugs.json")
 
     @staticmethod
     def get_pc_filepath():
