@@ -10,7 +10,7 @@ if __name__ == "__main__":
     80% training dataset
     20% testing dataset
     """
-    filtered_bugs_filepath = PathUtil.get_filtered_bugs_filepath()
+    filtered_bugs_filepath = PathUtil.get_filtered_eclipse_bugs_filepath()
     bugs = FileUtil.load_pickle(filtered_bugs_filepath)
 
     train_bugs, test_bugs = bugs.split_dataset_by_creation_time()

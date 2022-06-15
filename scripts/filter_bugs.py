@@ -1,4 +1,4 @@
-from bugbug import bugzilla
+# from bugbug import bugzilla
 from tqdm import tqdm
 
 from bug_tossing.types.bug import Bug
