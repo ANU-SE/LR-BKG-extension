@@ -7,6 +7,6 @@ if __name__ == "__main__":
     filtered_bugs_filepath = PathUtil.get_filtered_eclipse_bugs_filepath()
     bugs = FileUtil.load_pickle(filtered_bugs_filepath)
 
-    print(bugs.overall_bugs())
+    bugs.overall_bugs()
    
     # print(len(pcs))

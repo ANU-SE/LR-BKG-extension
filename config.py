@@ -19,7 +19,7 @@ FASTTEXT_MODEL_NAME = "wiki.en.bin"
 
 WORD2VEC_DIM = 300
 
-ONEHOT_DIM = 20828  # ONE_HOT_DIM = onehot.dim, you can get it from get_vec
+ONEHOT_DIM = 20572  # ONE_HOT_DIM = onehot.dim, you can get it from get_vec
 
 TOPIC_KEYWORDS_NUM = 911
 
@@ -27,7 +27,7 @@ TOP_N_BUG_SUMMARY_FEATURE_VECTOR_NUM = 30
 
 TOP_M_MISTOSSED_BUG_SUMMARY_FEATURE_VECTOR_NUM = 30
 
-FEATURE_VECTOR_NUMS_PER_FILE = 470000  # (the number of product::components) * 10,000
+FEATURE_VECTOR_NUMS_PER_FILE = 460000  # (the number of product::components) * 10,000
                                         # or FEATURE_VECTOR_NUMS_PER_FILE % (the number of product::components) == 0
 
 BLOCK_SIZE = 10000
